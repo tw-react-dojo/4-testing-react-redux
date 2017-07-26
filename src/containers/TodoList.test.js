@@ -41,5 +41,8 @@ describe('Connected', () =>  {
       </Provider>
     )
     expect(connectedTodosWrapper.find('Todo').length).toBe(1)
+    expect(connectedTodosWrapper.find('Todo').first().props().completed).toBeFalsy()
+    connectedTodosWrapper.find('Todo').first().simulate('click')
+    expect(connectedTodosWrapper.find('Todo').first().props().completed).toBeTruthy()
   })
 })
