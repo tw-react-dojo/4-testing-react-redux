@@ -31,7 +31,7 @@ let AddTodo = ({ addTodo }) => {
   )
 }
 
-const mapStateToProps = () => {}
+const mapStateToProps = () => ({})
 
 const mapDispatchToProps = { addTodo }
 
