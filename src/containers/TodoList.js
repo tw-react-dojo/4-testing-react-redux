@@ -3,7 +3,7 @@ import Todo from '../components/Todo'
 import { connect } from 'react-redux'
 import { toggleTodo } from '../reducer'
 
-let TodoList = ({ todos, length, toggleTodo }) => (
+export const PresentationalTodoList = ({ todos, length, toggleTodo }) => (
   <div className="row">
     <h2>You have to do {length} thing!</h2>
     <ul className="list-group">
@@ -26,6 +26,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { toggleTodo }
 
-TodoList = connect(mapStateToProps, mapDispatchToProps)(TodoList)
+const TodoList = connect(mapStateToProps, mapDispatchToProps)(PresentationalTodoList)
 
 export default TodoList
+

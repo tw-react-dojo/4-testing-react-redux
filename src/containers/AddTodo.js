@@ -2,13 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../reducer'
 
-let AddTodo = ({ addTodo }) => {
+export const PresentationalAddTodo = ({ addTodo }) => {
   let input
   return (
     <div className="row">
       <form
         className="form-inline"
         onSubmit={e => {
+          console.log(input.value)
           e.preventDefault()
           if (!input.value.trim()) {
             return
@@ -18,6 +19,7 @@ let AddTodo = ({ addTodo }) => {
         }}
       >
         <input
+          type="text"
           className="form-control"
           ref={node => {
             input = node
@@ -35,6 +37,6 @@ const mapStateToProps = () => ({})
 
 const mapDispatchToProps = { addTodo }
 
-AddTodo = connect(mapStateToProps, mapDispatchToProps)(AddTodo)
+const AddTodo = connect(mapStateToProps, mapDispatchToProps)(PresentationalAddTodo)
 
 export default AddTodo
